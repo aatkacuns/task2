@@ -1,0 +1,48 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="HId" [value]="service.formData.HId">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-sort-numeric-up-alt"  [class.green-icon]="HouseNumber.valid" [class.red-icon]="HouseNumber.invalid && HouseNumber.touched"></i>
+                </div>
+            </div>
+            <input type="number"  name="HouseNumber" #HouseNumber="ngModel" [(ngModel)]="service.formData.HouseNumber" class="form-control" placeholder="House Number" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-city" [class.green-icon]="HouseCity.valid" [class.red-icon]="HouseCity.invalid && HouseCity.touched"></i>
+                </div>
+            </div>
+            <input name="HouseCity" #HouseCity="ngModel" [(ngModel)]="service.formData.HouseCity" class="form-control" placeholder="House City" required maxlength="16">
+        </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-7">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-globe-europe"  [class.green-icon]="HouseCountry.valid" [class.red-icon]="HouseCountry.invalid && HouseCountry.touched"></i>
+                </div>
+            </div>
+            <input name="HouseCountry" #HouseCountry="ngModel" [(ngModel)]="service.formData.HouseCountry" class="form-control" placeholder="House Country" required maxlength="16">
+        </div>
+    </div>
+    <div class="form-group col-md-5">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-mail-bulk"  [class.green-icon]="HousePostIndex.valid" [class.red-icon]="HousePostIndex.invalid && HousePostIndex.touched"></i>
+                </div>
+            </div>
+            <input name="HousePostIndex" #HousePostIndex="ngModel" [(ngModel)]="service.formData.HousePostIndex" class="form-control" placeholder="Post Index" required maxlength="10">
+        </div>
+    </div>
+</div>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]=form.invalid><i class="fas fa-database"></i> Submit</button>
+    </div>
+</form>

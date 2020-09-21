@@ -1,0 +1,14 @@
+<table class="table table-hover">
+    <tr *ngFor="let f of service.list">
+        <td (click)="populateForm(f)">{{f.FlatNumber}}</td>
+        <td (click)="populateForm(f)">{{f.FlatFloor}}</td>
+        <td (click)="populateForm(f)">{{f.FlatRoomsAmmount}}</td>
+        <td (click)="populateForm(f)">{{f.FlatResidentAmmount}}</td>
+        <td (click)="populateForm(f)">{{f.FlatFullArea}}</td>
+        <td (click)="populateForm(f)">{{f.FlatLivingSpaceArea}}</td>
+        <td (click)="populateForm(f)">{{f.HouseId}}</td>
+        <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(f.FlatId)"></i>
+        </td>
+    </tr>
+</table>

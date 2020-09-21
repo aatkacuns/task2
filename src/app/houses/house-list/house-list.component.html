@@ -1,0 +1,11 @@
+<table class="table table-hover">
+    <tr *ngFor="let h of service.list">
+        <td (click)="populateForm(h)">{{h.HouseNumber}}</td>
+        <td (click)="populateForm(h)">{{h.HouseCity}}</td>
+        <td (click)="populateForm(h)">{{h.HouseCountry}}</td>
+        <td (click)="populateForm(h)">{{h.HousePostIndex}}</td>
+        <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(h.HId)"></i>
+        </td>
+    </tr>
+</table>
